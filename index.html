@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    
+    #options {
+      background-color: blanchedalmond;
+      width: 100px;
+      height: 30px;
+      border: solid black 1px;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    img {
+      margin-top: 50px;
+      width: 200px;
+      height: 200 px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <select id = "list" onchange = "select ()">
+    <option>red</option>
+    <option>orange</option>
+    <option>yellow</option>
+    <option>green</option>
+  </select> 
+
+  <div>
+    <img src = "Green.png" id = "green">
+    <img src = "Yellow.png" id = "yellow">
+    <img src = "Red.png" id = "red">
+    <img src = "Orange.png" id = "orange">
+  </div>
+
+  <script>
+    function select () {
+      var select = document.getElementById ("list");
+      var input = select.options [select.selectedIndex].text;
+      var img = document.getElementsByTagName ("img");
+      for (var i=0;i<img.length; i++) {
+        var current_img = img [i].id;
+        if (current_img == input) {
+          img [i].style.display= "inline-block"; 
+        }
+        else {
+          img [i].style.display ="none";
+        }
+      }
+    }
+  </script>
+  
+</body>
+
+</html>
